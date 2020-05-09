@@ -1,0 +1,3 @@
+C:\Users\Gaya\Programming\Kursach\WebApplication1\WebApplication1.Tests\obj\Debug\WebApplication1.Tests.vbprojAssemblyReference.cache
+C:\Users\Gaya\Programming\Kursach\WebApplication1\WebApplication1.Tests\obj\Debug\WebApplication1.Tests.Resources.resources
+C:\Users\Gaya\Programming\Kursach\WebApplication1\WebApplication1.Tests\obj\Debug\WebApplication1.Tests.vbproj.GenerateResource.cache
