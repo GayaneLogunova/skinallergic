@@ -308,7 +308,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-    <Content Include="Scripts\with-regions.json" />
+    <Content Include="Scripts\with-regions.js" />
     <Content Include="Scripts\regions-names.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

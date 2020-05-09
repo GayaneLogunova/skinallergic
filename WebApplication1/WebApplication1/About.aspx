@@ -21,10 +21,7 @@
     <div style="width:75%;">
 		<canvas id="canvas"></canvas>
 	</div>
-	<br>
-	<br>
 	<script>
-		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         var config = {
             type: 'line',
             data: {
@@ -85,21 +82,21 @@
     <p>&nbsp;</p>
     <a class="btn btn-default" href="Contact.aspx" > Пройти опрос </a>
     <br />
-    <asp:DropDownList ID="DiseaseDropDownList" runat="server" DataSourceID="Disease" DataTextField="Disease_name" DataValueField="Id">
+    <asp:DropDownList ID="DiseaseDropDownList" runat="server" DataTextField="Disease_name" DataValueField="Id" DataSourceID="Disease">
     </asp:DropDownList>
-    <asp:SqlDataSource ID="Disease" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConnectionString %>" SelectCommand="SELECT [Id], [Disease_name] FROM [Disease]"></asp:SqlDataSource>
+
+    <asp:SqlDataSource ID="Disease" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConString %>" SelectCommand="SELECT [Id], [Disease_name] FROM [Disease]"></asp:SqlDataSource>
 
     <br />
 
     <div id="russian-map">
-        <br />
     </div>
     <script src="scripts/raphael-min.js"></script>
     <script src="scripts/russian-map.js"></script>
     <script src="scripts/color-generator.js"></script>
     <script > var regionsColors = <%= Functions.SerializeToJson.CreateJson() %> </script>
     <script>
-        fetch('scripts/with-regions.json').then(function (response) {
+        fetch('scripts/with-regions.js').then(function (response) {
             response.json().then(function (data) {
                 new RussianMap({
                     viewPort: data.viewPort,

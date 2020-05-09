@@ -68,13 +68,13 @@ Partial Public Class Contact
     Protected WithEvents RegionDropDownList As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Rigions элемент управления.
+    '''Regions элемент управления.
     '''</summary>
     '''<remarks>
     '''Автоматически создаваемое поле.
     '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
     '''</remarks>
-    Protected WithEvents Rigions As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents Regions As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
     '''Label4 элемент управления.

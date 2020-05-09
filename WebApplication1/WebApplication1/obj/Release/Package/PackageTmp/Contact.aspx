@@ -13,9 +13,9 @@
     </p>
     <p>
         <asp:Label ID="Label6" runat="server" Text="Region: "></asp:Label>
-        <asp:DropDownList ID="RegionDropDownList" runat="server" DataSourceID="Rigions" DataTextField="Region_name" DataValueField="Id">
+        <asp:DropDownList ID="RegionDropDownList" runat="server" DataTextField="Region_name" DataValueField="Id" DataSourceID="Regions">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="Rigions" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConnectionString %>" SelectCommand="SELECT [Id], [Region_name] FROM [Regions]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="Regions" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConString %>" SelectCommand="SELECT [Id], [Region_name] FROM [Regions]"></asp:SqlDataSource>
     </p>
     <p>
         <asp:Label ID="Label4" runat="server" Text="Gender"></asp:Label>
@@ -26,9 +26,9 @@
     </p>
     <p>
         Disease:
-        <asp:DropDownList ID="DiseaseList" runat="server" DataSourceID="Disease" DataTextField="Disease_name" DataValueField="Id">
+        <asp:DropDownList ID="DiseaseList" runat="server" DataTextField="Disease_name" DataValueField="Id" DataSourceID="Disease">
         </asp:DropDownList>
-        <asp:SqlDataSource ID="Disease" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConnectionString %>" SelectCommand="SELECT [Id], [Disease_name] FROM [Disease]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="Disease" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConString %>" SelectCommand="SELECT [Id], [Disease_name] FROM [Disease]"></asp:SqlDataSource>
     </p>
     <p> 
 
