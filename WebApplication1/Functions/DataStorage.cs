@@ -26,7 +26,6 @@ namespace Functions
     {
 
         public static Random rnd = new Random();
-        private DataTable table;
 
         public static void WriteRegionsToFile()
         {
@@ -59,80 +58,19 @@ namespace Functions
 
         public static void SaveInfoToFile(User person)
         {
-            string conString = "Data Source=LAPTOP-8TKAEMDT;Initial Catalog=SkinAllergyDB;Integrated Security=True";
+            /*            string conString = "Data Source=LAPTOP-8TKAEMDT;Initial Catalog=SkinAllergyDB;Integrated Security=True";
+            */
+            string conString = "Data Source=skinallergic.database.windows.net;Initial Catalog=skinallergicDB;User ID=sobachka;Password=Glucka(2506);Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection con = new SqlConnection(conString);
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                string querystring = "Insert into Respondents(Id, Name, Age, Gender, Disease, Region, DateOfCreation) values('" + 1 + "','" + person.Name + "','" + person.Age + "','" + person.Gender + "','" + person.Disease + "','" + person.Region + "','" + person.DateOfCreation + "')";
+                string querystring = "Insert into Respondents(Name, Age, Gender, Disease, Region, DateOfCreation) values('" + person.Name + "','" + person.Age + "','" + person.Gender + "','" + person.Disease + "','" + person.Region + "','" + person.DateOfCreation + "')";
                 SqlCommand cmd = new SqlCommand(querystring, con);
                 cmd.ExecuteNonQuery();
             }
             con.Close();
         }
-
-        public static void FullTable()
-        {
-            /*Dictionary<int, string> openWith = new Dictionary<int, string>();
-
-
-            openWith.Add(0, "Covid-19");
-            openWith.Add(1, "Allergy");
-            openWith.Add(2, "Angina");*/
-            for (int i = 0; i < 1000; i++)
-            {
-/*                openWith.TryGetValue(rnd.Next(0, 3), out value);
-*/                User person = new User(GenerateName(), rnd.Next(1, 120).ToString(), rnd.Next(0, 2) == 0 ? "male" : "female", "77", rnd.Next(1, 4).ToString());
-                SaveInfoToFile(person);
-            }
-        }
-
-        public static void ClearTable()
-        {
-            OdbcConnection con = new OdbcConnection("Driver={Microsoft Access Driver (*.mdb)};"
-            + @"Dbq=C:\Users\Gaya\Programming\Kursach\WebApplication1\DD.mdb;Uid=Admin;Pwd=;");
-            string querystring = "DELETE FROM Table1";
-            con.Open();
-            OdbcCommand cmd = new OdbcCommand(querystring, con);
-            con.Close();
-
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-        }
-        private static string GenerateName()
-        {
-            int length = rnd.Next(2, 14);
-            StringBuilder s = new StringBuilder();
-            s.Append((char)rnd.Next('A', 'Z' + 1));
-            for (int i = 0; i < length - 1; i++)
-            {
-                s.Append((char)rnd.Next('a', 'z' + 1));
-            }
-            return s.ToString();
-        }
- /*       public DataStorage()
-        {
-            DataTable table = new DataTable();
-            DataColumn column;
-            column = new DataColumn();
-            column.ColumnName = "Name";
-            table.Columns.Add(column);
-            column = new DataColumn();
-            column.ColumnName = "Age";
-            table.Columns.Add(column); column = new DataColumn();
-            column.ColumnName = "Gender";
-            table.Columns.Add(column); column = new DataColumn();
-            column.ColumnName = "Disease";
-            table.Columns.Add(column);
-            this.table = table;
-        }
-
-        private void AddInfo(User person)
-        {
-            table.Rows.Add(person.Name, person.Age, person.Gender, person.Disease);
-        }*/
 
     }
 }

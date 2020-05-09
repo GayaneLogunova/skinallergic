@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DDConnectionString-Web.config Connection String" description="DDConnectionString Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Gaya\Programming\Kursach\WebApplication1\DD.mdb" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Gaya\\Programming\\Kursach\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DDConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="SkinAllergyDBConnectionString-Web.config Connection String" description="SkinAllergyDBConnectionString Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=LAPTOP-8TKAEMDT;Initial Catalog=SkinAllergyDB;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Gaya\\Programming\\Kursach\\WebApplication1\\WebApplication1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SkinAllergyDBConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
