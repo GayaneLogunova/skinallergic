@@ -4,8 +4,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using System.Data.Odbc;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Data.SqlClient;
@@ -27,35 +25,6 @@ namespace Functions
 
         public static Random rnd = new Random();
 
-        public static void WriteRegionsToFile()
-        {
-
-
-
-            OdbcConnection con = new OdbcConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source = C:\\Users\\Gaya\\Programming\\Kursach\\WebApplication1\\DD.mdb");
-            
-
-           
-          /*  OdbcConnection con = new OdbcConnection("Driver={Microsoft Access Driver (*.mdb)};"
-           + @"Dbq=C:\Users\Gaya\Programming\Kursach\WebApplication1\DD.mdb;Uid=Admin;Pwd=;");*/
-            //Replaced Parameters with Value
-            string query = "INSERT INTO Regions (Identity, Region_name) VALUES(?, ?)";
-            OdbcCommand cmd = new OdbcCommand(query, con);
-
-  /*          //Pass values to Parameters
-            for (int i = 0; i < regionNames.names.Length; i++)
-            {
-                cmd.Parameters.AddWithValue("@Identity", regionNames.names[i].num);
-                cmd.Parameters.AddWithValue("@Region_name", regionNames.names[i].name);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }*/
-
-        }
-
-
-
         public static void SaveInfoToFile(User person)
         {
             /*            string conString = "Data Source=LAPTOP-8TKAEMDT;Initial Catalog=SkinAllergyDB;Integrated Security=True";
@@ -65,7 +34,9 @@ namespace Functions
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                string querystring = "Insert into Respondents(Name, Age, Gender, Disease, Region, DateOfCreation) values('" + person.Name + "','" + person.Age + "','" + person.Gender + "','" + person.Disease + "','" + person.Region + "','" + person.DateOfCreation + "')";
+                /*                string querystring = "Insert into Respondents(Name, Age, Gender, Disease, Region, DateOfCreation) values('" + person.Name + "','" + person.Age + "','" + person.Gender + "','" + person.Disease + "','" + person.Region + "','" + person.DateOfCreation + "')";
+                */
+                string querystring = "Insert into Respondents(Name, Age, Gender, Disease, Region, DateOfCreation, DurationOfIlness, Exacerbation, Stage) values('" + person.Name + "','" + person.Age + "','" + person.Gender + "','" + person.Disease + "','" + person.Region + "','" + person.DateOfCreation + "','" + person.DurationOfIlness + "','" + person.Exacerbation + "','" + person.Stage + "')";
                 SqlCommand cmd = new SqlCommand(querystring, con);
                 cmd.ExecuteNonQuery();
             }

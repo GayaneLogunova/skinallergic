@@ -87,6 +87,8 @@
 
     <asp:SqlDataSource ID="Disease" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConString %>" SelectCommand="SELECT [Id], [Disease_name] FROM [Disease]"></asp:SqlDataSource>
 
+    <asp:Button ID="SubmitDiseaseButton" runat="server" Text="Подтвердить" />
+
     <br />
 
     <div id="russian-map">
@@ -96,9 +98,9 @@
     <script src="scripts/color-generator.js"></script>
     <script > var regionsColors = <%= Functions.SerializeToJson.CreateJson() %> </script>
     <script>
-        fetch('scripts/with-regions.js').then(function (response) {
+        var zzz = fetch('scripts/with-regions.js').then(function (response) {
             response.json().then(function (data) {
-                new RussianMap({
+                zzz = new RussianMap({
                     viewPort: data.viewPort,
                     mapId: 'russian-map',
                     width: 862,

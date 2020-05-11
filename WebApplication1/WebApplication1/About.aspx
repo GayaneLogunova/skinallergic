@@ -1,9 +1,32 @@
 ﻿<%@ Page  Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.vb" Inherits="WebApplication1.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %></h2>
+    <h2><%: "ВСЕРОССИЙСКАЯ ПЕРЕПИСЬ ПАЦИЕНТОВ С ХРОНИЧЕСКИМИ ЗАБОЛЕВАНИЯМИ КОЖИ" %></h2>
     <p>
-        <asp:Label ID="Label1" runat="server" Text="Все больше и больше людей проходят опрос, помогая нам работать еще лучше!"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="Нам важно знать - коже нужна помощь"></asp:Label>
+    </p>
+    <p>
+        &nbsp;</p>
+        <a class="btn btn-default" href="Contact.aspx" > Пройти опрос </a>
+    <p>
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Content/MainScreenPicture.png" ImageAlign="Middle" />
+    </p>
+    <p>
+        <asp:Table ID="Table1" runat="server">
+            <asp:TableRow runat="server">
+                <asp:TableCell runat="server">Создать единую базу данных людей с хроническими заболеваниями кожи</asp:TableCell>
+                <asp:TableCell runat="server">Учесть потребности людей с хроническими заболеваниями кожи</asp:TableCell>
+                <asp:TableCell runat="server">Разработать индивидуальных подход к каждому человеку с хроническими заболеваниями кожи</asp:TableCell>
+                <asp:TableCell runat="server">Информировать общество о проблемах людей с хроническими заболеваниями кожи</asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+    </p>
+    <p> </p>
+    <p>
+        <asp:Label ID="Label1" runat="server" Text="Всероссийская перепись людей с хроническими заболеваниями кожи поможет найти таких людей, живущих среди нас. Ее цель – создание единой базы данных людей с хроническими заболеваниями кожи, что позволит в дальнейшем найти подход к решению проблем с хроническими заболеваниями кожи и долгосрочному планированию медицинской помощи на государственном уровне.  " Font-Overline="False"></asp:Label>
+    </p>
+<p>
+        <asp:Label ID="Label3" runat="server" Text="Люди по всей стране проходят анкетирования, помогая нам в этом важном деле. "></asp:Label>
     </p>
 
     <script src="scripts/Chart.min.js"></script>
@@ -80,12 +103,13 @@
 
 
     <p>&nbsp;</p>
-    <a class="btn btn-default" href="Contact.aspx" > Пройти опрос </a>
     <br />
     <asp:DropDownList ID="DiseaseDropDownList" runat="server" DataTextField="Disease_name" DataValueField="Id" DataSourceID="Disease">
     </asp:DropDownList>
 
     <asp:SqlDataSource ID="Disease" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConString %>" SelectCommand="SELECT [Id], [Disease_name] FROM [Disease]"></asp:SqlDataSource>
+
+    <asp:Button ID="SubmitDiseaseButton" runat="server" Text="Подтвердить" />
 
     <br />
 
@@ -96,9 +120,9 @@
     <script src="scripts/color-generator.js"></script>
     <script > var regionsColors = <%= Functions.SerializeToJson.CreateJson() %> </script>
     <script>
-        fetch('scripts/with-regions.js').then(function (response) {
+        var zzz = fetch('scripts/with-regions.js').then(function (response) {
             response.json().then(function (data) {
-                new RussianMap({
+                zzz = new RussianMap({
                     viewPort: data.viewPort,
                     mapId: 'russian-map',
                     width: 862,

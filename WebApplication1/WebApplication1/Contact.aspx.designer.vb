@@ -32,6 +32,15 @@ Partial Public Class Contact
     Protected WithEvents NameTextBox As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''RequiredFieldValidator1 элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
     '''Label3 элемент управления.
     '''</summary>
     '''<remarks>
@@ -48,6 +57,15 @@ Partial Public Class Contact
     '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
     '''</remarks>
     Protected WithEvents AgeTextBox As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''rvAge элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents rvAge As Global.System.Web.UI.WebControls.RangeValidator
 
     '''<summary>
     '''Label6 элемент управления.
@@ -111,6 +129,42 @@ Partial Public Class Contact
     '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
     '''</remarks>
     Protected WithEvents Disease As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''DurationOfIlnessDropDownList элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents DurationOfIlnessDropDownList As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''ExacerbationDropDownList элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents ExacerbationDropDownList As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''StageDropDownList элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents StageDropDownList As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Label7 элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''SubmitQA элемент управления.

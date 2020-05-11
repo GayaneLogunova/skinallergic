@@ -37,9 +37,45 @@ WebApplication1
  Возвращает объект журнала ASP.
  </summary>
 </member>
+<member name="F:WebApplication1.About._Label2">
+<summary>
+Label2 элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1.About._Image1">
+<summary>
+Image1 элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1.About._Table1">
+<summary>
+Table1 элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
 <member name="F:WebApplication1.About._Label1">
 <summary>
 Label1 элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1.About._Label3">
+<summary>
+Label3 элемент управления.
 </summary>
 <remarks>
 Автоматически создаваемое поле.
@@ -64,6 +100,15 @@ Disease элемент управления.
 Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
 </remarks>
 </member>
+<member name="F:WebApplication1.About._SubmitDiseaseButton">
+<summary>
+SubmitDiseaseButton элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
 <member name="F:WebApplication1.Contact._Label5">
 <summary>
 Label5 элемент управления.
@@ -82,6 +127,15 @@ NameTextBox элемент управления.
 Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
 </remarks>
 </member>
+<member name="F:WebApplication1.Contact._RequiredFieldValidator1">
+<summary>
+RequiredFieldValidator1 элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
 <member name="F:WebApplication1.Contact._Label3">
 <summary>
 Label3 элемент управления.
@@ -94,6 +148,15 @@ Label3 элемент управления.
 <member name="F:WebApplication1.Contact._AgeTextBox">
 <summary>
 AgeTextBox элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1.Contact._rvAge">
+<summary>
+rvAge элемент управления.
 </summary>
 <remarks>
 Автоматически создаваемое поле.
@@ -163,9 +226,63 @@ Disease элемент управления.
 Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
 </remarks>
 </member>
+<member name="F:WebApplication1.Contact._DurationOfIlnessDropDownList">
+<summary>
+DurationOfIlnessDropDownList элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1.Contact._ExacerbationDropDownList">
+<summary>
+ExacerbationDropDownList элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1.Contact._StageDropDownList">
+<summary>
+StageDropDownList элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
 <member name="F:WebApplication1.Contact._SubmitQA">
 <summary>
 SubmitQA элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1._Default._DiseaseDropDownList">
+<summary>
+DiseaseDropDownList элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1._Default._disease">
+<summary>
+disease элемент управления.
+</summary>
+<remarks>
+Автоматически создаваемое поле.
+Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+</remarks>
+</member>
+<member name="F:WebApplication1._Default._DiseaseSubmitButton">
+<summary>
+DiseaseSubmitButton элемент управления.
 </summary>
 <remarks>
 Автоматически создаваемое поле.

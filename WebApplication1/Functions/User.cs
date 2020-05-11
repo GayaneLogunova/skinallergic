@@ -10,9 +10,12 @@ namespace Functions
     {
         private string name;
         private int age;
-        private string gender;
+        private int gender;
         private int disease;
         private int region;
+        private int durationOfIlness;
+        private int exacerbation;
+        private int stage;
         private DateTime dateOfCreation;
 
         internal string Name
@@ -25,7 +28,7 @@ namespace Functions
             get => age;
         }
 
-        internal string Gender
+        internal int Gender
         {
             get => gender;
         }
@@ -39,22 +42,38 @@ namespace Functions
         {
             get => region;
         }
+
+        internal int DurationOfIlness
+        {
+            get => durationOfIlness;
+        }
+
+        internal int Exacerbation
+        {
+            get => exacerbation;
+        }
+
+        internal int Stage
+        {
+            get => stage;
+        }
+
         internal DateTime DateOfCreation
         {
             get => dateOfCreation;
         }
-        public User(string Name, string Age, string Gender, string Region, string Disease)
+        public User(string Name, string Age, string Gender, string Region, string Disease, string DurationOfIlness, string Exacerbation, string Stage)
         {
             this.name = Name;
-            if (!int.TryParse(Age, out this.age) || age < 0 || age > 120)
+            if (!int.TryParse(Age, out this.age))
                 throw new AgeException();
-            if (Gender == null)
-                throw new GenderException();
-            else
-                this.gender = Gender;
+            this.gender = int.Parse(Gender);
             if (!int.TryParse(Disease, out this.disease))
                 throw new DiseaseException();
             this.region = int.Parse(Region);
+            this.durationOfIlness = int.Parse(DurationOfIlness);
+            this.exacerbation = int.Parse(Exacerbation);
+            this.stage = int.Parse(Stage);
             dateOfCreation = DateTime.Now;
         }
     }

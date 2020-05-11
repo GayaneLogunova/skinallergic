@@ -39,8 +39,6 @@ namespace Functions
 
             Dictionary<int, Dictionary<int, int>> allRegions = new Dictionary<int, Dictionary<int, int>>();
             Dictionary<int, int> regionsIncidence = new Dictionary<int, int>();
-            /*            string conString = "Data Source=LAPTOP-8TKAEMDT;Initial Catalog=SkinAllergyDB;Integrated Security=True";
-            */
             string conString = "Data Source=skinallergic.database.windows.net;Initial Catalog=skinallergicDB;User ID=sobachka;Password=Glucka(2506);Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection con = new SqlConnection(conString);
             string querystring = "Select Disease, Count(Disease), Region From Respondents GROUP BY Disease, Region ORDER BY Disease";
