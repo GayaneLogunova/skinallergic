@@ -11,15 +11,8 @@
     <p>
         <asp:Label ID="Label3" runat="server" Text="Возраст"></asp:Label>
         <asp:TextBox ID="AgeTextBox" runat="server"></asp:TextBox>
-        <asp:RangeValidator
-           ControlToValidate="AgeTextBox"
-           Display="Static"
-           ErrorMessage="возраст должен быть целым числом"
-           ID="rvAge"
-           MaximumValue="150"
-           MinimumValue="1"
-           RunAt="Server"
-           Type="Integer" />
+        &nbsp;<asp:RequiredFieldValidator ID="AgeValidator" runat="server" ControlToValidate="AgeTextBox" ErrorMessage="Поле возраст не может быть пустым"></asp:RequiredFieldValidator>
+&nbsp;<asp:Label ID="AgeNotIntValidator" runat="server" Text="Возраст должен быть целым числом" Visible="False"></asp:Label>
 
     </p>
     <p>
@@ -29,7 +22,7 @@
         <asp:SqlDataSource ID="Regions" runat="server" ConnectionString="<%$ ConnectionStrings:SkinAllergyDBConString %>" SelectCommand="SELECT [Id], [Region_name] FROM [Regions]"></asp:SqlDataSource>
     </p>
     <p>
-        <asp:Label ID="Label4" runat="server" Text="Пол"></asp:Label>
+        <asp:Label ID="Label4" runat="server" Text="Пол: "></asp:Label>
         <asp:DropDownList ID="GenderList" runat="server">
             <asp:ListItem Value ="1">Мужской</asp:ListItem>
             <asp:ListItem Value ="2">Женский</asp:ListItem>
@@ -73,10 +66,29 @@
         </asp:DropDownList>
     </p>
     <p>
-        <asp:Label ID="Label7" runat="server" Text="Согласие на обработку персональных данных"></asp:Label>
+        <asp:Label ID="Label7" runat="server" Text="Согласие на обработку персональных данных: "></asp:Label>
+        <asp:CheckBox ID="PermissionCheckBox" runat="server" />
+        <asp:Label ID="PermissionLabel" runat="server" Text="Обязательно дать согласие на обработку персональных данных" Visible="False"></asp:Label>
+    </p>
+    <p>
+        <asp:Label ID="Label8" runat="server" Text="Я в соответвии с Федеральным законом 27.07.2006 № 152 -ФЗ «О персональных данных», своей волей и в своем интересе, даю согласие на обработку любым не запрещенным законом способом всех указанных в настоящей анкете персональных данных. " ForeColor="Red"></asp:Label>
     </p>
     <p> 
         <asp:Button ID="SubmitQA" runat="server" Text="Подтвердить" />
     </p>
+<p> 
+        &nbsp;</p>
+<p class="MsoNormal">
+    <span>Указанные выше персональные данные предоставляются для целей:<o:p></o:p></span></p>
+<p class="MsoNormal">
+    <![if !supportLists]><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><span>формирование и сопровождение базы данных в рамках проведения Всероссийской переписи людей с хроническими заболеваниями кожи;<o:p></o:p></span></p>
+<p class="MsoNormal">
+    <![if !supportLists]><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><span>Предоставление образовательной, научной, медицинской и любой другой информации, являющейся частью социальной программы для людей с хроническими заболеваниями кожи, а также материалов в письменной, печатной, электронной, устной и любой другой соответствующей форме, посредством электронной почты, телефонных звонков, сообщений в социальных сетях Интернет, лично и/ или любым иным соответствующим способом;<o:p></o:p></span></p>
+<p class="MsoNormal">
+    <![if !supportLists]><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><![endif]><span>приглашения на образовательные, благотворительные и иные мероприятия, направленные на поддержку и улучшение положения людей с хроническими заболеваниями кожи, а также обеспечения участия в таких мероприятиях.&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<o:p></o:p></span></p>
+<p class="MsoNormal">
+    <span>Согласие на обработку персональных данных дано Межрегиональной благотворительной общественной организации «Кожные и аллергические болезни» &nbsp;<o:p></o:p></span></p>
+<p> 
+        &nbsp;</p>
         
 </asp:Content>

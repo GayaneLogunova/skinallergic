@@ -32,6 +32,24 @@ Partial Public Class _Default
     Protected WithEvents disease As Global.System.Web.UI.WebControls.SqlDataSource
 
     '''<summary>
+    '''RegionDropDownList элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents RegionDropDownList As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''regions элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents regions As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
     '''DiseaseSubmitButton элемент управления.
     '''</summary>
     '''<remarks>

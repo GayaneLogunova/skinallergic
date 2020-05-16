@@ -17,8 +17,6 @@ namespace Functions
         public static Dictionary<string, int> DateOfCreationData()
         {
             Dictionary<string, int> dates = new Dictionary<string, int>();
-            /*            string conString = "Data Source=LAPTOP-8TKAEMDT;Initial Catalog=SkinAllergyDB;Integrated Security=True";
-            */
             string conString = "Data Source=skinallergic.database.windows.net;Initial Catalog=skinallergicDB;User ID=sobachka;Password=Glucka(2506);Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection con = new SqlConnection(conString);
             string querystring = "Select Day(DateOfCreation), YEAR(DateOfCreation), count(*) From Respondents Group By Day(DateOfCreation), Year(DateOfCreation) Order By Day(DateOfCreation), Year(DateOfCreation)";
@@ -66,5 +64,82 @@ namespace Functions
             return allRegions;
         }
 
+        public static Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<string, int>>>> FullData()
+        {
+            Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<string, int>>>> groupedByDisease = new Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<string, int>>>>();
+            Dictionary<string, Dictionary<string, Dictionary<string, int>>> groupedByRegion = new Dictionary<string, Dictionary<string, Dictionary<string, int>>>();
+            Dictionary<string, Dictionary<string, int>> groupedByStage = new Dictionary<string, Dictionary<string, int>>();
+            Dictionary<string, int> groupedByDuration = new Dictionary<string, int>();
+            string conString = "Data Source=skinallergic.database.windows.net;Initial Catalog=skinallergicDB;User ID=sobachka;Password=Glucka(2506);Connect Timeout=60;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection con = new SqlConnection(conString);
+            string querystring = "Select COUNT(DurationOfIlness), DurationOfIlness, Stage, Region, Disease From Respondents GROUP BY Disease, Region, Stage, DurationOfIlness Order by Disease, Region, Stage, DurationOfIlness";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(querystring, con);
+            SqlDataReader Reader = cmd.ExecuteReader();
+            int disease = 0, region = 0, stage = 0;
+            while (Reader.Read())
+            {
+                if (disease == 0)
+                {
+                    disease = Reader.GetInt32(4);
+                    region = Reader.GetInt32(3);
+                    stage = Reader.GetInt32(2);
+                }
+                if (stage != Reader.GetInt32(2))
+                {
+                    groupedByStage.Add(stage.ToString(), groupedByDuration);
+                    stage = Reader.GetInt32(2);
+                    groupedByDuration = new Dictionary<string, int>();
+                }
+                if (region != Reader.GetInt32(3))
+                {
+                    if (groupedByStage.Count == 0)
+                    {
+                        groupedByStage.Add(stage.ToString(), groupedByDuration);
+                        groupedByDuration = new Dictionary<string, int>();
+                    }
+                    groupedByRegion.Add(region.ToString(), groupedByStage);
+                    region = Reader.GetInt32(3);
+                    groupedByStage = new Dictionary<string, Dictionary<string, int>>();
+                }
+                if (disease != Reader.GetInt32(4))
+                {
+                    if (groupedByRegion.Count == 0)
+                    {
+                        if (groupedByStage.Count == 0)
+                        {
+                            groupedByStage.Add(stage.ToString(), groupedByDuration);
+                            groupedByDuration = new Dictionary<string, int>();
+                        }
+                        groupedByRegion.Add(region.ToString(), groupedByStage);
+                        groupedByStage = new Dictionary<string, Dictionary<string, int>>();
+                    }
+                    groupedByDisease.Add(disease.ToString(), groupedByRegion);
+                    disease = Reader.GetInt32(4);
+                    groupedByRegion = new Dictionary<string, Dictionary<string, Dictionary<string, int>>>();
+                }
+                if (Reader.GetInt32(1) == 1)
+                    groupedByDuration.Add(1.ToString(), Reader.GetInt32(0));
+                else if (Reader.GetInt32(1) <= 5)
+                {
+                    if (groupedByDuration.ContainsKey(2.ToString()))
+                        groupedByDuration[2.ToString()] += Reader.GetInt32(0);
+                    else
+                        groupedByDuration.Add(2.ToString(), Reader.GetInt32(0));
+                }
+                else
+                {
+                    if (groupedByDuration.ContainsKey(3.ToString()))
+                        groupedByDuration[3.ToString()] += Reader.GetInt32(0);
+                    else
+                        groupedByDuration.Add(3.ToString(), Reader.GetInt32(0));
+                }
+
+            }
+            groupedByDisease.Add(disease.ToString(), groupedByRegion);
+            Reader.Close();
+            con.Close();
+            return groupedByDisease;
+        }
     }
 }

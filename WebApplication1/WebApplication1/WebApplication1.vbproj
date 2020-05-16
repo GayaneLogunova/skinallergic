@@ -185,6 +185,7 @@
     <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\color-generator.js" />
     <Content Include="Scripts\Data-for-graph.js" />
+    <Content Include="Scripts\full-data-analys.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -214,6 +215,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>

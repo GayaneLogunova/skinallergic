@@ -59,13 +59,22 @@ Partial Public Class Contact
     Protected WithEvents AgeTextBox As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''rvAge элемент управления.
+    '''AgeValidator элемент управления.
     '''</summary>
     '''<remarks>
     '''Автоматически создаваемое поле.
     '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
     '''</remarks>
-    Protected WithEvents rvAge As Global.System.Web.UI.WebControls.RangeValidator
+    Protected WithEvents AgeValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''AgeNotIntValidator элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents AgeNotIntValidator As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Label6 элемент управления.
@@ -165,6 +174,33 @@ Partial Public Class Contact
     '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
     '''</remarks>
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''PermissionCheckBox элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents PermissionCheckBox As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''PermissionLabel элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents PermissionLabel As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Label8 элемент управления.
+    '''</summary>
+    '''<remarks>
+    '''Автоматически создаваемое поле.
+    '''Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+    '''</remarks>
+    Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''SubmitQA элемент управления.

@@ -65,11 +65,9 @@ namespace Functions
         public User(string Name, string Age, string Gender, string Region, string Disease, string DurationOfIlness, string Exacerbation, string Stage)
         {
             this.name = Name;
-            if (!int.TryParse(Age, out this.age))
-                throw new AgeException();
+            this.age = int.Parse(Age);
             this.gender = int.Parse(Gender);
-            if (!int.TryParse(Disease, out this.disease))
-                throw new DiseaseException();
+            this.disease = int.Parse(Disease);
             this.region = int.Parse(Region);
             this.durationOfIlness = int.Parse(DurationOfIlness);
             this.exacerbation = int.Parse(Exacerbation);

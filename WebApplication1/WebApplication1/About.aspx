@@ -1,27 +1,45 @@
 ﻿<%@ Page  Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.vb" Inherits="WebApplication1.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: "ВСЕРОССИЙСКАЯ ПЕРЕПИСЬ ПАЦИЕНТОВ С ХРОНИЧЕСКИМИ ЗАБОЛЕВАНИЯМИ КОЖИ" %></h2>
-    <p>
-        <asp:Label ID="Label2" runat="server" Text="Нам важно знать - коже нужна помощь"></asp:Label>
-    </p>
-    <p>
-        &nbsp;</p>
-        <a class="btn btn-default" href="Contact.aspx" > Пройти опрос </a>
-    <p>
-        <asp:Image ID="Image1" runat="server" ImageUrl="~/Content/MainScreenPicture.png" ImageAlign="Middle" />
-    </p>
-    <p>
-        <asp:Table ID="Table1" runat="server">
-            <asp:TableRow runat="server">
-                <asp:TableCell runat="server">Создать единую базу данных людей с хроническими заболеваниями кожи</asp:TableCell>
-                <asp:TableCell runat="server">Учесть потребности людей с хроническими заболеваниями кожи</asp:TableCell>
-                <asp:TableCell runat="server">Разработать индивидуальных подход к каждому человеку с хроническими заболеваниями кожи</asp:TableCell>
-                <asp:TableCell runat="server">Информировать общество о проблемах людей с хроническими заболеваниями кожи</asp:TableCell>
-            </asp:TableRow>
-        </asp:Table>
-    </p>
-    <p> </p>
+    <link rel="stylesheet" href="StyleSheet.css">
+    <div>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <h2><%: "ВСЕРОССИЙСКАЯ ПЕРЕПИСЬ ПАЦИЕНТОВ С ХРОНИЧЕСКИМИ ЗАБОЛЕВАНИЯМИ КОЖИ" %></h2>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="height:40px;">
+                    <asp:Label ID="Label2" runat="server" Text="Нам важно знать - коже нужна помощь" CssClass="head"></asp:Label>
+                </td>
+            </tr>
+            <tr style="height:70px;">
+                <td colspan="4">
+                    <asp:Button ID="GoToQAButton" runat="server" Text="Пройти Анкетирование" CssClass="button button2" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                      <asp:Image ID="ImageCensusTasks" runat="server" ImageUrl="~/Content/MainScreenPicture.png" ImageAlign="Middle" CssClass="image" />
+                </td>
+            </tr>
+            <tr style="height:125px;">
+                <td>
+                    <asp:Label ID="Label4" runat="server" Text="Создать единую базу данных людей с хроническими заболеваниями кожи"></asp:Label></td>
+                <td>
+                    <asp:Label ID="Label5" runat="server" Text="Label">Учесть потребности людей с хроническими заболеваниями кожи</asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="Label6" runat="server" Text="Разработать индивидуальных подход к каждому человеку с хроническими заболеваниями кожи"></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="Label7" runat="server" Text="Информировать общество о проблемах людей с хроническими заболеваниями кожи"></asp:Label>
+                </td>
+            </tr>
+        </table>
+    </div>
+
     <p>
         <asp:Label ID="Label1" runat="server" Text="Всероссийская перепись людей с хроническими заболеваниями кожи поможет найти таких людей, живущих среди нас. Ее цель – создание единой базы данных людей с хроническими заболеваниями кожи, что позволит в дальнейшем найти подход к решению проблем с хроническими заболеваниями кожи и долгосрочному планированию медицинской помощи на государственном уровне.  " Font-Overline="False"></asp:Label>
     </p>

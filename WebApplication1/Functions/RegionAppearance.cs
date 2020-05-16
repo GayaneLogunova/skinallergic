@@ -28,9 +28,9 @@ namespace Functions
 
         private string GenerateColor(int num)
         {
-            if (num < 100)
+            if (num < 5)
                 return "#F9E5E0";
-            if (num < 500)
+            if (num < 100)
                 return "#EFAFA1";
             return "#FF00FF";
         }
@@ -45,6 +45,11 @@ namespace Functions
             return jsonString;
         }
 
+        public static string FullDataJson()
+        {
+            string jsonString = JsonSerializer.Serialize(AnalysData.FullData());
+            return jsonString;
+        }
         public static string CreateJson()
         {
             Dictionary<string, Dictionary<string, RegionAppearance>> allRegionColors = new Dictionary<string, Dictionary<string, RegionAppearance>>();
